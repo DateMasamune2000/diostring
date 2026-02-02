@@ -82,5 +82,21 @@ int main(void)
     s1.size = s1.maxsize = 0;
     s2.size = s2.maxsize = 0;
 
+    s1.mem = malloc(sizeof(char) * 20);
+    s1.maxsize = 20;
+    s1.size = 0;
+
+    str_copyraw(&s1, "dank memes");
+
+    printf("TEST 5: Find until...");
+
+    string f = str_sliceuntil(s1, ' ');
+    assert(f.size == strlen("dank"));
+    assert(strncmp(f.mem, "dank", f.size) == 0);
+    printf("PASS\n");
+
+    free(s1.mem);
+    s1.size = s1.maxsize = 0;
+
     return 0;
 }

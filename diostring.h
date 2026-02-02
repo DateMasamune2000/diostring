@@ -16,4 +16,6 @@ int str_ncmp(string s1, string s2, size_t n);
 
 int str_cat(string *s1, string s2);
 
+const string str_sliceuntil(string s1, char c);
+
 #endif

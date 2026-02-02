@@ -1,5 +1,20 @@
 #include "diostring.h"
 
+const string str_sliceuntil(string s1, char c)
+{
+	size_t i;
+
+	for (i = 0; i < s1.size; i++) {
+		if (s1.mem[i] == c) break;
+	}
+
+	return (string) {
+		.mem = s1.mem,
+		.size = i,
+		.maxsize = i,
+	};
+}
+
 int str_copyraw(string *str, const char *raw)
 {
     size_t i;
